@@ -1,3 +1,5 @@
+import "./TaskManager.css";
+
 export function TaskManager() {
   return (
     <div className="TaskManager">

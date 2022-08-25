@@ -1,3 +1,27 @@
 .Header{
-    text-align: center;
+    width: 1fr;
+    display: grid;
+    grid-auto-flow: column;
+    
+}
+
+.Header img{
+    width: 200px;
+    justify-content: start;
+}
+
+.Header h1{
+    justify-content: center;
+}
+
+.Header button{
+    background: none;
+    border: none;
+}
+
+.Header .logo{
+    width: 20px;
+    height: 20px;
+    justify-content: end;
+   
 }
