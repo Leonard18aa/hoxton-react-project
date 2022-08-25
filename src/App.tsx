@@ -1,9 +1,14 @@
 import "./App.css";
+import { Finance } from "./component/Finance";
+import { Header } from "./component/Header";
+import { TaskManager } from "./component/TaskManager";
 
 function App() {
   return (
     <div className="App">
-      <h1>Task Manager</h1>
+      <Header />
+      <Finance />
+      <TaskManager />
     </div>
   );
 }
