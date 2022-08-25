@@ -34,7 +34,7 @@ export function Finance() {
   return (
     <div className="Finance">
       <div className="header-finance">
-        <h1>Budgets</h1>
+        <h1>Your Budgets</h1>
         <button>Add Budget</button>
         <button>Add Expense</button>
       </div>
