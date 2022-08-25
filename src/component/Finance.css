@@ -1,0 +1,17 @@
+.header-finance {
+    display: grid;
+    grid-auto-flow: column;
+    text-align: center;
+
+}
+.header-finance button{
+    width: 100px;
+    height: 40px;
+    justify-items: center;
+}
+
+.Budget-List{
+    border: 1px solid black;
+    text-align: center;
+    width: 400px;
+}

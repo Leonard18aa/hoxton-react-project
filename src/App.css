@@ -1,0 +1,4 @@
+.finace-taskManager{
+    display: grid;
+    grid-auto-flow: column;
+}
