@@ -1,17 +1,34 @@
-.header-finance {
+.Finance{
+   
+    justify-self: center;
+    width: 450px;
+    border: 1px solid black;
+}
+
+.Balance{
     display: grid;
     grid-auto-flow: column;
+    padding: 40px 0px;
     text-align: center;
-
-}
-.header-finance button{
-    width: 100px;
-    height: 40px;
-    justify-items: center;
 }
 
-.Budget-List{
+.Balance button{
+    width: 60px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.TransictionView{
+    display: grid;
+    grid-auto-flow: row;
+    /* width: 100px; */
+    gap: 5px;
     border: 1px solid black;
-    text-align: center;
-    width: 400px;
+   
+}
+
+.expenseContainer{
+    font-weight: bold;
+    font-size: 20px;
+    
 }

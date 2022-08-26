@@ -1,58 +1,87 @@
 import { useState } from "react";
 import "./Finance.css";
-import { currencyFormatter } from "../utils";
+import { currencyFormatter } from "./utils";
 
-export function Finance() {
-  const [payment, setpayment] = useState(5000);
-  const [budgets, setBudgets] = useState([
-    {
-      id: 1,
-      title: "Entertaiment",
-      minBudget: 200,
-      maxBudget: 1000,
-    },
-    {
-      id: 2,
-      title: "School",
-      minBudget: 1000,
-      maxBudget: 10000,
-    },
-    {
-      id: 3,
-      title: "Grocery",
-      minBudget: 200,
-      maxBudget: 500,
-    },
-    {
-      id: 4,
-      title: "Health",
-      minBudget: 200,
-      maxBudget: 1000,
-    },
-  ]);
+const AddTransactionView = (props) => {
+  const [amount, setAmount] = useState();
+  const [desc, setDesc] = useState();
+  const [type, setType] = useState("EXPENSE");
+
+  const addTransiction = () => {
+    props.addTransiction({
+      amount: Number(amount),
+      desc,
+      type,
+      id: Date.now(),
+    });
+
+    props.toggleAddTxn();
+  };
+
+  return (
+    <div className="TransictionView">
+      <input
+        type="number"
+        placeholder="Amount"
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Description"
+        value={desc}
+        onChange={(e) => setDesc(e.target.value)}
+      />
+      <div>
+        <input
+          type="radio"
+          id="expense"
+          name="type"
+          value="EXPENSE"
+          checked={type === "EXPENSE"}
+          onChange={(e) => setType(e.target.value)}
+        />
+        <label htmlFor="expense">Expense</label>
+        <input
+          type="radio"
+          id="income"
+          name="type"
+          value="INCOME"
+          checked={type === "INCOME"}
+          onChange={(e) => setType(e.target.value)}
+        />
+        <label htmlFor="income">Income</label>
+      </div>
+      <button onClick={addTransiction}>ADD TRANSACTION</button>
+    </div>
+  );
+};
+
+export function Finance(props) {
+  const [isAddTxnVisible, toggleAddTxn] = useState(false);
 
   return (
     <div className="Finance">
-      <div className="header-finance">
-        <h1>Your Budgets</h1>
-        <button>Add Budget</button>
-        <button>Add Expense</button>
+      <div className="Balance">
+        <h1>Balance {currencyFormatter.format(props.income - props.expense)}</h1>
+        
+        <button onClick={() => toggleAddTxn(!isAddTxnVisible)}>
+          {isAddTxnVisible ? "Cancel" : "ADD"}
+        </button>
       </div>
-      <h1>My monthly payment {currencyFormatter.format(payment)}</h1>
-      <div className="Budget-List">
-        {budgets.map((budget) => {
-          return (
-            <>
-              <h1>{budget.title}</h1>
-              <h1>
-                Min budget {currencyFormatter.format(budget.minBudget)}
-              </h1>
-              <h1>
-                Max budget {currencyFormatter.format(budget.maxBudget)}
-              </h1>
-            </>
-          );
-        })}
+      {isAddTxnVisible && (
+        <AddTransactionView
+          toggleAddTxn={toggleAddTxn}
+          addTransiction={props.addTransiction}
+        />
+      )}
+      <div className="expenseContainer" >
+        <div >
+          Expense <span>{currencyFormatter.format(props.expense)}</span>
+        </div>
+        <div >
+          Income <span>{currencyFormatter.format(props.income)}</span>
+        </div>
       </div>
     </div>
   );
