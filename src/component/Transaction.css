@@ -24,5 +24,8 @@ padding-top: 20px;
     font-weight: bolder;
     background-color: black;
     color: white;
-    
+}
+
+.AllTransaction{
+    padding-left: 30px;
 }

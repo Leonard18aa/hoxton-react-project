@@ -5,6 +5,7 @@ import { currencyFormatter } from "./utils";
 const TransictionCell = (props) => {
   return (
     <div className="addedMenu">
+      
     <div className="transactionMenu">
       <span>{props.payload.desc}</span>
       <span>{currencyFormatter.format(props.payload.amount)}</span>
@@ -31,7 +32,7 @@ export function TransactionsComponent(props) {
   useEffect(() => filterData(searchText), [props.transaction])
 
   return (
-    <div>
+    <div className="AllTransaction">
       <h1 className="transactionName">Transiction</h1>
       <div className="searchBarDiv">
       <input

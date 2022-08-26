@@ -63,7 +63,10 @@ export function Finance(props) {
   const [isAddTxnVisible, toggleAddTxn] = useState(false);
 
   return (
+    <div>
+      <h1 className="financeTitle">Finance</h1>
     <div className="Finance">
+      
       <div className="Balance">
         <h1 className="BalanceAmount">
           Balance {currencyFormatter.format(props.income - props.expense)}
@@ -88,6 +91,7 @@ export function Finance(props) {
           Income <span>{currencyFormatter.format(props.income)}</span>
         </div>
       </div>
+    </div>
     </div>
   );
 }

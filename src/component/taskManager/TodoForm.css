@@ -1,0 +1,31 @@
+.todoGroup{
+    margin: 30px 20px;
+    width: fit-content;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+    border: 1px solid black;
+    padding: 15px 15px;
+    border-radius: 10px;
+   font-family: 'Ruda', sans-serif;
+    
+}
+
+.todoList{
+    padding-left: 100px;
+}
+
+.inputForTodo{
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+
+
+.todoButton{
+    width: 60px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-weight: bolder;
+}
