@@ -21,12 +21,14 @@ const AddTransactionView = (props) => {
   return (
     <div className="TransictionView">
       <input
+        className="amountInput"
         type="number"
         placeholder="Amount"
         value={amount}
         onChange={(e) => setAmount(e.target.value)}
       />
       <input
+        className="descInput"
         type="text"
         placeholder="Description"
         value={desc}
@@ -52,7 +54,7 @@ const AddTransactionView = (props) => {
         />
         <label htmlFor="income">Income</label>
       </div>
-      <button onClick={addTransiction}>ADD TRANSACTION</button>
+      <button className="AddButton" onClick={addTransiction}>ADD TRANSACTION</button>
     </div>
   );
 };
@@ -63,11 +65,14 @@ export function Finance(props) {
   return (
     <div className="Finance">
       <div className="Balance">
-        <h1>Balance {currencyFormatter.format(props.income - props.expense)}</h1>
-        
+        <h1 className="BalanceAmount">
+          Balance {currencyFormatter.format(props.income - props.expense)}
+        </h1>
+        <div className="button">
         <button onClick={() => toggleAddTxn(!isAddTxnVisible)}>
           {isAddTxnVisible ? "Cancel" : "ADD"}
         </button>
+        </div>
       </div>
       {isAddTxnVisible && (
         <AddTransactionView
@@ -75,11 +80,11 @@ export function Finance(props) {
           addTransiction={props.addTransiction}
         />
       )}
-      <div className="expenseContainer" >
-        <div >
+      <div className="expenseAmountContainer">
+        <div className="expenseContainer">
           Expense <span>{currencyFormatter.format(props.expense)}</span>
         </div>
-        <div >
+        <div className="incomeConatainer">
           Income <span>{currencyFormatter.format(props.income)}</span>
         </div>
       </div>

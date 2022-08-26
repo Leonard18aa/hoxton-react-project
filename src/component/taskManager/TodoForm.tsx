@@ -1,5 +1,5 @@
 import { useState } from "react";
-import uuid from "uuid";
+import { v4 as uuidv4 } from 'uuid';
 
 export function TodoForm({ addTodo }) {
   const [todo, setTodo] = useState({
@@ -8,14 +8,14 @@ export function TodoForm({ addTodo }) {
     completed: false,
   });
 
-  function handleTaskInputChange(e) {
+  function handleTaskInputChange(e: { target: { vaule: any; }; }) {
     setTodo({ ...todo, task: e.target.vaule });
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     if (todo.task.trim()) {
-      addTodo({ ...todo, id: uuid.v4() });
+      addTodo({ ...todo, id: uuidv4.v4() });
       setTodo({...todo, task: ""})
     }
   }

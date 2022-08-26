@@ -4,9 +4,11 @@ import { currencyFormatter } from "./utils";
 
 const TransictionCell = (props) => {
   return (
-    <div>
+    <div className="addedMenu">
+    <div className="transactionMenu">
       <span>{props.payload.desc}</span>
       <span>{currencyFormatter.format(props.payload.amount)}</span>
+    </div>
     </div>
   );
 };
@@ -30,14 +32,17 @@ export function TransactionsComponent(props) {
 
   return (
     <div>
-      <h1>Transiction</h1>
+      <h1 className="transactionName">Transiction</h1>
+      <div className="searchBarDiv">
       <input
+      className="searchBarFilter"
         type="text"
         placeholder="Search"
         value={searchText}
         onChange={(e) => {updateSearchText(e.target.value)
         filterData((e.target.value))}}
       />
+      </div>
       {filterTransaction?.length
         ? filterTransaction.map((payload) => (
             <TransictionCell payload={payload} />

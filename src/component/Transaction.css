@@ -1,0 +1,28 @@
+.transactionName{
+    padding-left: 160px;
+}
+
+.searchBarDiv{
+    padding-left: 145px;
+}
+
+.searchBarFilter{
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+.addedMenu{
+    padding-left: 150px;
+padding-top: 20px;
+}
+
+.transactionMenu{
+    border: 1px solid black;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 10px 10px;
+    font-weight: bolder;
+    background-color: black;
+    color: white;
+    
+}

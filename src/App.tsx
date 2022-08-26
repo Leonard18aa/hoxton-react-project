@@ -2,14 +2,16 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { HomeComponent } from "./component";
 import { Header } from "./component/Header";
-import { TodoForm } from "./component/taskManager/todoForm";
+import { TodoForm } from "./component/taskManager/TodoForm";
 import { TodoList } from "./component/taskManager/TodoList";
+
+const LOCAL_STORAGE_KEY = 'react-todo-list-todos'
 
 function App() {
   const [todos, setTodos] = useState([]);
 
   useEffect(()=>{
-
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos))
   }, [todos])
 
   function addTodo(todo) {
@@ -21,7 +23,7 @@ function App() {
       <Header />
       <div className="finace-taskManager">
         <HomeComponent />
-        <div>
+        <div className="TodoApp">
           <TodoForm addTodo={addTodo} />
           <TodoList todos={todos} />
         </div>

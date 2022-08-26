@@ -1,21 +1,32 @@
 .Finance{
-   
-    justify-self: center;
-    width: 450px;
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 400px;
+   font-family: 'Ruda', sans-serif;
     border: 1px solid black;
+    padding: 20px 20px ;
+    border-radius: 20px;
 }
 
 .Balance{
     display: grid;
     grid-auto-flow: column;
-    padding: 40px 0px;
+    /* padding: 40px 0px; */
     text-align: center;
 }
 
-.Balance button{
-    width: 60px;
-    padding: 5px 10px;
+.button{
+    padding-top: 15px;
     cursor: pointer;
+}
+.button button{
+    padding: 10px 15px;
+    background-color: black;
+    color: white;
+    font-family: 'Ruda', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 20px;
 }
 
 .TransictionView{
@@ -24,11 +35,64 @@
     /* width: 100px; */
     gap: 5px;
     border: 1px solid black;
-   
+    padding: 20px 20px;
+    border-radius: 20px;
+   background-image: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(159, 241, 255));
+   font-family: 'Ruda', sans-serif;
+   gap: 15px;
+}
+
+.expenseAmountContainer{
+    font-weight: bold;
+    font-size: 20px;
+    display: grid;
+    grid-auto-flow: column;
+    text-align: center;
+    gap: 10px;
+    padding-top: 20px;
 }
 
 .expenseContainer{
-    font-weight: bold;
-    font-size: 20px;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    padding: 10px 0px;
+    border-radius: 15px;
+}
+
+.incomeConatainer{
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    padding: 10px 0px;
+    border-radius: 15px;
+
+
+}
+
+.BalanceAmount{
+   font-family: 'Ruda', sans-serif;
     
+}
+
+.amountInput{
+  padding: 10px 0px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.descInput{
+    padding: 10px 0px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.AddButton{
+    border-radius: 10px;
+    width: 200px;
+    align-content: center;
+    background-color: black;
+    color: white;
+    padding: 5px 5px;
+    font-weight: bold;
 }
