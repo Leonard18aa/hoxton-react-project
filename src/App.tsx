@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import { HomeComponent } from "./component";
 import { Header } from "./component/Header";
@@ -7,6 +7,10 @@ import { TodoList } from "./component/taskManager/TodoList";
 
 function App() {
   const [todos, setTodos] = useState([]);
+
+  useEffect(()=>{
+
+  }, [todos])
 
   function addTodo(todo) {
     setTodos([todo, ...todos]);
